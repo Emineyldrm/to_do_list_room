@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/gorevler">
+
+    <fragment
+        android:id="@+id/gorevler"
+        android:name="com.emine.todolistroom.view.Gorevler"
+        android:label="fragment_gorevler"
+        tools:layout="@layout/fragment_gorevler" >
+        <action
+            android:id="@+id/action_gorevler_to_gorevlerIcerik"
+            app:destination="@id/gorevlerIcerik" />
+    </fragment>
+    <fragment
+        android:id="@+id/gorevlerIcerik"
+        android:name="com.emine.todolistroom.view.GorevlerIcerik"
+        android:label="fragment_gorevler_icerik"
+        tools:layout="@layout/fragment_gorevler_icerik" >
+        <argument
+            android:name="bilgi"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_gorevlerIcerik_to_gorevler"
+            app:destination="@id/gorevler" />
+    </fragment>
+</navigation>
